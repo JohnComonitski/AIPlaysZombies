@@ -19,7 +19,7 @@ class Game:
     SPACE_SIZE = 10
 
     #Editable Game Stats
-    TOTAL_ZOMBIES = 11
+    TOTAL_ZOMBIES = 10
     ZOMBIE_SPEED = 3
     KILL_ZOMBIES = True
 

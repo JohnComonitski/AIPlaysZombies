@@ -17,9 +17,9 @@ class Zombie:
             return False
 
         def inOuterBounds(x,y):
-            if(x > player_x + 200 or x < player_x - 200):
+            if(x > player_x + 300 or x < player_x - 300):
                 return True
-            if(y > player_y + 200 or y < player_y - 200):
+            if(y > player_y + 300 or y < player_y - 300):
                 return True
             return False
 
