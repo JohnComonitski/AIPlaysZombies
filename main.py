@@ -169,7 +169,6 @@ def eval_genomes(genomes, config):
     for i, (genome_id, genome) in enumerate(genomes):
         genome.fitness = 0
         #Each Genome is test 10 times to reduce the effect of luck
-        #if(genome_id == 189):
         for j in range(10):
             genome_stats = {"test": j, "Genome ID": genome_id, "fitness": genome.fitness, "gen": generation}
             game = ZombieGame(win, genome_stats)
@@ -177,8 +176,8 @@ def eval_genomes(genomes, config):
     generation += 1
 
 def run_neat(config):
-    p = neat.Checkpointer.restore_checkpoint('neat-checkpoint-263')
-    #p = neat.Population(config)
+    #p = neat.Checkpointer.restore_checkpoint('neat-checkpoint-*')
+    p = neat.Population(config)
     
     p.add_reporter(neat.StdOutReporter(True))
     stats = neat.StatisticsReporter()
@@ -215,6 +214,6 @@ if __name__ == "__main__":
     config = neat.Config(neat.DefaultGenome, neat.DefaultReproduction,
                          neat.DefaultSpeciesSet, neat.DefaultStagnation,
                          config_path)
-    run_neat(config)
+    #run_neat(config)
     #test_ai(config)
-    #run_aStar()
+    run_aStar()
